@@ -74,12 +74,17 @@ gboolean        gst_poll_remove_fd        (GstPoll *set, GstPollFD *fd);
 
 gboolean        gst_poll_fd_ctl_write     (GstPoll *set, GstPollFD *fd, gboolean active);
 gboolean        gst_poll_fd_ctl_read      (GstPoll *set, GstPollFD *fd, gboolean active);
+
+gboolean        gst_poll_fd_ctl_pri       (GstPoll *set, GstPollFD *fd, gboolean active);
+
 void            gst_poll_fd_ignored       (GstPoll *set, GstPollFD *fd);
 
 gboolean        gst_poll_fd_has_closed    (const GstPoll *set, GstPollFD *fd);
 gboolean        gst_poll_fd_has_error     (const GstPoll *set, GstPollFD *fd);
 gboolean        gst_poll_fd_can_read      (const GstPoll *set, GstPollFD *fd);
 gboolean        gst_poll_fd_can_write     (const GstPoll *set, GstPollFD *fd);
+
+gboolean        gst_poll_fd_has_pri       (const GstPoll *set, GstPollFD *fd);
 
 gint            gst_poll_wait             (GstPoll *set, GstClockTime timeout);
 
